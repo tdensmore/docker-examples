@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  webapp:
+    image: nginx:1.25.5
+    container_name: nginx
+    depends_on:
+     - database
+
+  database:
+    image: nginx:1.25.5
+    container_name: database
+    extends:
+        file: ./database/compose.yaml
+        service: database

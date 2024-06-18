@@ -1,0 +1,14 @@
+FROM ubuntu:latest
+
+# Define the contents of the configuration file using a heredoc
+RUN cat <<EOF > config.ini
+[database]
+host = db.example.com
+port = 5432
+username = myuser
+password = mypassword
+EOF
+
+# Run the application
+CMD ["python", "app.py"]
+

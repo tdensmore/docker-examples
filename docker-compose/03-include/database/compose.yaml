@@ -1,0 +1,6 @@
+version: '3'
+ 
+services:
+  database:
+    image: nginx:1.25.5
+    container_name: database

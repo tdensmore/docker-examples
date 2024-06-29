@@ -11,6 +11,9 @@ dist-ssr
 coverage
 *.local
 
+## mssql
+mssql_database/data/*
+
 # Logs
 logs
 *.log

@@ -5,15 +5,20 @@ services:
       # target: development
     ports:
       - 8081:80
-    # volumes:
-    #   - ./vuejs:/project
-    #   - /project/node_modules
   backend:
     build:
       context: backend_dotnet
       # target: development
     ports:
       - 8082:8080
-    # volumes:
-    #   - ./vuejs:/project
-    #   - /project/node_modules
+  database:
+    build:
+      context: mssql_database
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}" # Read from .env
+      MSSQL_PID: "Express"
+    ports:
+        - 1433:1433
+    volumes:
+     - ./data:/var/opt/mssql/data

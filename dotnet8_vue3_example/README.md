@@ -1,6 +1,10 @@
 # dotnet 8 vue 3 example
 
+`MSSQL_SA_PASSWORD="somevalue"`
 
+then
+
+`docker compose up`
 
 ## Frontend VUE
 

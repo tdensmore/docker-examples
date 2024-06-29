@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build:
+      context: frontend_vue
+      # target: development
+    ports:
+      - 8081:80
+    # volumes:
+    #   - ./vuejs:/project
+    #   - /project/node_modules
+  backend:
+    build:
+      context: backend_dotnet
+      # target: development
+    ports:
+      - 8082:8080
+    # volumes:
+    #   - ./vuejs:/project
+    #   - /project/node_modules

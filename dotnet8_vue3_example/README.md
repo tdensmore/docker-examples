@@ -35,6 +35,18 @@ Sample dotnet core project created with the CLI
 
 `dotnet new webapi -n <PROJECT_NAME>`
 
+## Database mssql
+
+Normally a `cocker-compose.yml` file might use a standard database image reference like this:
+
+    ```yaml
+    database:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+    ```
+However this example will seed the database with data, so we build it using the `mssql_database` folder context.
+
+The ENTRYPOINT calls the `scripts/initialize.sh` file which executes SQL contained in the `scripts/create-database.sql` file.
+
 ## References
 
 [Example dotnet Dockerfiles](https://github.com/dotnet/dotnet-docker/blob/main/samples/complexapp/Dockerfile)

@@ -1,0 +1,32 @@
+- uses: hoverkraft-tech/compose-action@v0.0.0
+  with:
+    # https://github.com/marketplace/actions/docker-compose-action
+    #
+    # Description: Relative path to compose file(s). It can be a list of files.
+    #
+    # Default: ./docker-compose.yml
+    compose-file: ""
+
+    # Description: Services to perform docker-compose up.
+    #
+    services: ""
+
+    # Description: Additional options to pass to `docker-compose up` command.
+    #
+    # Default:
+    up-flags: ""
+
+    # Description: Additional options to pass to `docker-compose down` command.
+    #
+    # Default:
+    down-flags: ""
+
+    # Description: Additional options to pass to `docker-compose` command.
+    #
+    # Default:
+    compose-flags: ""
+
+    # Description: Current working directory
+    #
+    # Default: ${{ github.workspace }}
+    cwd: ""

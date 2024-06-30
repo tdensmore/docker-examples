@@ -1,5 +1,23 @@
 # dotnet 8 vue 3 example
 
+This folder contains a self-contained example of a containerized Vue3 frontend with a dotnet8 backend using a mssql database.
+
+The whole stack is built using containers and run using docker compose.
+
+## Run
+
+### Option 1: start.sh
+
+To run the stack, execute the `start.sh` script.
+
+The script will ask for a password, set an environment variable, and start the stack using Docker compose.
+
+(we don't want to commit passwords into our repo or store them in our continers)
+
+### Option 2: docker compose
+
+To use `docker compose` directly, manually set the database password using an environment variable:
+
 `MSSQL_SA_PASSWORD="somevalue"`
 
 then
@@ -15,7 +33,7 @@ Sample VUE project created with
 
 Sample dotnet core project created with the CLI
 
-``
+`dotnet new webapi -n <PROJECT_NAME>`
 
 ## References
 
@@ -38,3 +56,5 @@ Sample dotnet core project created with the CLI
 [Create a dotnet project on Mac](https://dev.to/rusydy/setting-up-a-net-project-on-macos-590m)
 
 [Create a dotnet project from CLI](https://www.c-sharpcorner.com/article/create-a-net-core-web-api-using-command-line/)
+
+[Microsoft dotnet tutorial](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio-mac)

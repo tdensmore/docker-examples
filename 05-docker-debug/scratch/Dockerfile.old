@@ -1,0 +1,13 @@
+FROM golang:1.22-alpine AS builder
+WORKDIR /build
+ADD . /build/frontend.go
+RUN go mod init todd.com/frontend
+RUN go build -o frontend /build/frontend.go
+
+FROM alpine as PROD
+COPY --from=builder /build/frontend /frontend
+RUN chmod 777 /frontend
+RUN adduser -D frontend
+EXPOSE 8081
+USER frontend
+ENTRYPOINT ["/frontend"]

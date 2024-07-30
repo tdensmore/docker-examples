@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "yOSCmIIWE60=",
+  "success": true,
+  "projectFilePath": "/Users/todd/workspace/docker/demos/docker-examples/03-docker-init/dotnet/src/myWebApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/todd/.nuget/packages/microsoft.netcore.app.ref/7.0.20/microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "/Users/todd/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.20/microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "/Users/todd/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.20/microsoft.netcore.app.host.osx-arm64.7.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,33 @@
+# Build Stage
+# First pull Golang image
+FROM golang:1.18-alpine as build-env
+
+# Set envirment variable
+ENV APP_NAME hell-go
+ENV CMD_PATH hello.go
+ENV GO111MODULE=on
+# possible values are windows, darwin, js
+ENV GOOS linux
+
+# Copy application data into image
+COPY . $GOPATH/src/$APP_NAME
+WORKDIR $GOPATH/src/$APP_NAME
+
+# Budild application
+RUN CGO_ENABLED=0 go build -v -o /$APP_NAME $GOPATH/src/$APP_NAME/$CMD_PATH
+
+# Run Stage
+#FROM alpine:3.14
+FROM scratch
+
+# Set envirment variable
+ENV APP_NAME hello-go
+
+# Copy only required data into this image
+COPY --from=build-env /$APP_NAME .
+
+# Expose application port
+EXPOSE 8081
+
+# Start app 
+CMD ./$APP_NAME

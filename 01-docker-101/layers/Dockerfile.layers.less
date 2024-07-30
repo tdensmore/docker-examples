@@ -1,0 +1,7 @@
+FROM alpine:latest
+
+RUN touch file1; touch file2; \
+    mkdir dir1; \
+    mv file2 dir1/; \
+    rm file1
+

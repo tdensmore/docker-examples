@@ -1,0 +1,7 @@
+FROM alpine:3.12
+WORKDIR /tmp
+COPY ./data/local.tar.gz ./tmp/
+RUN gunzip ./tmp/local.tar.gz; \
+    tar xvf ./tmp/local.tar; \
+    rm ./tmp/*.*;
+CMD ["ls"]

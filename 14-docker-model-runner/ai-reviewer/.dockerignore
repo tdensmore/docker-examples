@@ -49,7 +49,7 @@ docker-compose*
 Dockerfile*
 
 # Data (if not needed in image)
-data/
+# data/
 
 # Miscellaneous
 local/

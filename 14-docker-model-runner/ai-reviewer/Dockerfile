@@ -20,6 +20,8 @@ USER appuser
 
 ENV NODE_ENV=production
 ENV NODE_OPTIONS="--max-old-space-size=4096"
+ENV ALLOW_GENERATE_COMMENTS=false
+ENV OPENAI_BASE_URL="http://model-runner.docker.internal/engines/v1"
 
 # Expose port if your app listens on a specific port (not strictly needed for CLI apps)
 # EXPOSE 3000

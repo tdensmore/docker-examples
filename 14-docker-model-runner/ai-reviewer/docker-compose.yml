@@ -1,0 +1,30 @@
+services:
+
+  gemma:
+    provider:
+      type: model
+      options:
+        model: ai/gemma3
+
+  embedding:
+    provider:
+      type: model
+      options:
+        model: ai/mxbai-embed-large
+
+  app:
+    # image: node:lts-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/local/app/
+    command: node ./index.js
+    volumes: 
+      - ./:/app/
+    depends_on:
+      - gemma
+      - embedding
+    environment:
+      OPENAI_BASE_URL: "http://model-runner.docker.internal/engines/v1"
+      LLM_MODEL: "ai/gemma3"
+      EMBEDDINGS_MODEL: "ai/mxbai-embed-large"

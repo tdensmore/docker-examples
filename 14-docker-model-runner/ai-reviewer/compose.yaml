@@ -1,0 +1,16 @@
+services:
+  js-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: js-app
+    restart: unless-stopped
+    init: true
+    # env_file: ./.env  # Uncomment if .env file exists
+    # No ports exposed because the app appears to be a CLI tool
+    # No volumes needed as there are no persistent database requirements
+    # No external service dependencies detected from README or code
+    # If you need to interact with Docker Model Runner, ensure it is running on the host as per README
+
+# No networks section needed as there is only one service and no inter-service communication
+# No volumes section needed as there are no persistent data services

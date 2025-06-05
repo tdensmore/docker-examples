@@ -1,5 +1,43 @@
 
-## Docker inference
+# Docker inference
+
+## Run with interactive shell
+
+docker model run ai/smollm2:360M-Q4_K_M
+
+## Run with query
+
+docker model run ai/smollm2 "what model is running?"
+
+NOTE: Notice that the answer is different every time.
+
+## Access from the HOST
+
+docker model run ai/smollm2:360M-Q4_K_M
+
+example:
+
+## Access from a CONTAINER
+
+example:
+
+docker model run  ai/smollm2:360M-Q4_K_M
+
+# Package a model
+
+## Step 1: Download a model, e.g. from HuggingFace
+
+```
+curl -L -o model.gguf https://huggingface.co/TheBloke/Mistral-7B-v0.1-GGUF/resolve/main/mistral-7b-v0.1.Q4_K_M.gguf
+```
+
+## Step 2: Package and push it
+``
+docker model package --gguf "$(pwd)/model.gguf" --push myorg/mistral-7b-v0.1:Q4_K_M
+``
+
+
+
 
 
 ```

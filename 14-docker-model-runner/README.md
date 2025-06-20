@@ -1,19 +1,30 @@
 
 # Docker inference
 
+
+## Pull a model
+
+* Get the model size before you pull it
+
+`docker model inspect -r ai/smollm2`
+
+* pull the model
+
+`docker model pull ai/smollm2`
+
 ## Run with interactive shell
 
-docker model run ai/smollm2:360M-Q4_K_M
+`docker model run ai/smollm2:360M-Q4_K_M`
 
 ## Run with query
 
-docker model run ai/smollm2 "what model is running?"
+`docker model run ai/smollm2 "what model is running?"`
 
 NOTE: Notice that the answer is different every time.
 
 ## Access from the HOST
 
-docker model run ai/smollm2:360M-Q4_K_M
+`docker model run ai/smollm2:360M-Q4_K_M`
 
 example:
 
@@ -21,7 +32,7 @@ example:
 
 example:
 
-docker model run  ai/smollm2:360M-Q4_K_M
+`docker model run  ai/smollm2:360M-Q4_K_M`
 
 # Package a model
 

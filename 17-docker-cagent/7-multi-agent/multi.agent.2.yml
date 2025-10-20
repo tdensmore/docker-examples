@@ -1,0 +1,27 @@
+agents:
+  root:
+    model: dmr/ai/qwen3
+    description: "Main coordinator agent that delegates tasks and manages workflow"
+    instruction: "You always delegate story requests to sub_agents" 
+    sub_agents: ["agent1","agent2","agent3"]
+
+  agent1:
+    model: dmr/ai/smollm2
+    description: "You are a story writer agent that always writes the first paragraph (story introduction)."
+    instruction: "Always start the first paragraph with: AGENT1 INTRO:"
+
+  agent2:
+    model: dmr/ai/qwen3
+    description: "You are a story writer agent that always writes the second paragraph (story middle setup)."
+    instruction: "You always start the second paragraph with: AGENT2 MIDDLE:" 
+    sub_agents: ["agent2.5"]
+
+  agent2.5:
+    model: dmr/ai/qwen3
+    description: "You are a story writer agent that always writes the third paragraph (story middle setup)."
+    instruction: "You always start the second paragraph with: AGENT2.5 THIRD:" 
+
+  agent3:
+    model: dmr/ai/smollm3
+    description: "You are a story write agent that always writes the last paragraph (story ending)."
+    instruction: "You always start the second paragraph with: AGENT3 ENDING:" 

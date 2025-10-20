@@ -1,0 +1,12 @@
+version: "2"
+
+agents:
+  root:
+    model: anthropic/claude-sonnet-4-5
+    instruction: Use your tool to help with the user's GitHub request
+    commands:
+      primeissues: How many issues in docker/cagent have a number that is prime?
+    code_mode_tools: true
+    toolsets:
+      - type: mcp
+        ref: docker:github-official

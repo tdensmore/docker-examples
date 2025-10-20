@@ -1,0 +1,1 @@
+cagent run ./pirate.yml

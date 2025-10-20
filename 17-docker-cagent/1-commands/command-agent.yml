@@ -1,0 +1,13 @@
+version: "2"
+
+agents:
+  root:
+    model: anthropic/claude-sonnet-4-5
+    instruction: "you are a helpful computer assistant"
+    commands:
+      diskspace: check how much free space I hace on my filesystem
+      freememory: show me how much free memory I have left
+    toolsets:
+      - type: filesystem
+      - type: shell
+

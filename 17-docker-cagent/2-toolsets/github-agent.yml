@@ -1,0 +1,21 @@
+version: '2'
+
+metadata:
+  author: "Todd"
+  readme: "Github Agent"
+
+agents:
+  root:
+    model: "claude"
+    description: "Help with Github using MCP tools."
+    instruction: "You are a helpful GitHub assistant"
+    toolsets:
+      - type: "mcp"
+        ref: docker:github-official
+        instruction: "Use this tool to help with GitHub related tasks."
+
+models:
+  claude:
+    provider: "anthropic"
+    model: "claude-sonnet-4-0"
+    max_tokens: 64000

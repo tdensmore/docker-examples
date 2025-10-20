@@ -1,0 +1,21 @@
+version: '2'
+
+metadata:
+  author: "Todd"
+  readme: "DockerHub Agent"
+
+agents:
+  root:
+    model: "claude"
+    description: "Help with Docker Hub questions using MCP tools."
+    instruction: "You are a helpful Docker Hub assistant"
+    toolsets:
+      - type: "mcp"
+        ref: docker:dockerhub
+        instruction: "Use this tool to help with GitHub related tasks."
+
+models:
+  claude:
+    provider: "anthropic"
+    model: "claude-sonnet-4-0"
+    max_tokens: 64000

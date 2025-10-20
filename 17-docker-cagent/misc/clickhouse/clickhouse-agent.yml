@@ -1,0 +1,21 @@
+version: '2'
+
+metadata:
+  author: "Todd"
+  readme: "Clickhouse Agent"
+
+agents:
+  root:
+    model: "claude"
+    description: "Help with Clickhouse using MCP tools."
+    instruction: "Help with Clickhouse queries"
+    toolsets:
+      - type: "mcp"
+        ref: docker:clickhouse
+        instruction: "Use this tool to help with Clickhouse nyc_taxi queries."
+
+models:
+  claude:
+    provider: "anthropic"
+    model: "claude-sonnet-4-0"
+    max_tokens: 64000

@@ -1,0 +1,10 @@
+version: "2"
+
+agents:
+  root:
+    model: anthropic/claude-sonnet-4-5
+    instruction: "You are a helpful computer assistant"
+    commands: 
+      summarize: "Summarize https://docker.com"
+    toolsets:
+      - type: fetch

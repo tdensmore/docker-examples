@@ -1,0 +1,1 @@
+1. Research the top 5 kubernetes testing companies

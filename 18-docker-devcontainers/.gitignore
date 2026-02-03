@@ -1,0 +1,118 @@
+# ==============================================================================
+# .gitignore for Rust Devcontainer Demo
+# ==============================================================================
+# This file tells Git which files to IGNORE (not track/commit)
+# 
+# WHY THIS MATTERS FOR CUSTOMERS:
+# - Keeps repositories clean (only source code, no build artifacts)
+# - Reduces repo size (faster clones, less storage)
+# - Prevents committing binaries (security risk, merge conflicts)
+# - Ensures consistent team experience
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Rust Build Artifacts (PRIMARY REASON FOR THIS FILE)
+# ------------------------------------------------------------------------------
+# These are generated when you run "cargo build" or "cargo run"
+# They can be 100s of MB and should NEVER be committed
+
+/target/              # All compiled binaries and build outputs
+**/*.rs.bk           # Backup files created by Rust tools
+*.pdb                # Debug symbols (Windows)
+
+# Cargo.lock - KEEP for applications, IGNORE for libraries
+# For this demo (binary application), we'd typically keep Cargo.lock
+# Uncommenting the line below would ignore it:
+# Cargo.lock
+
+
+# ------------------------------------------------------------------------------
+# Devcontainer & Docker Artifacts
+# ------------------------------------------------------------------------------
+# These are created when building/running containers
+
+.devcontainer/.env    # Local environment variables (may contain secrets)
+*.log                 # Container logs
+
+
+# ------------------------------------------------------------------------------
+# IDE & Editor Files (Team uses different tools)
+# ------------------------------------------------------------------------------
+# Developers use VS Code, IntelliJ, vim, etc.
+# These settings are personal, not project-related
+
+# VS Code
+.vscode/*
+!.vscode/settings.json     # Keep shared team settings
+!.vscode/tasks.json        # Keep shared build tasks
+!.vscode/launch.json       # Keep shared debug configs
+!.vscode/extensions.json   # Keep recommended extensions
+
+# IntelliJ/CLion
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+
+# ------------------------------------------------------------------------------
+# Operating System Files
+# ------------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.Trash-*
+.nfs*
+
+
+# ------------------------------------------------------------------------------
+# Testing & Coverage Reports
+# ------------------------------------------------------------------------------
+
+/coverage/
+*.profraw
+*.profdata
+
+
+# ------------------------------------------------------------------------------
+# Security & Secrets (CRITICAL - TALK ABOUT THIS IN DEMOS)
+# ------------------------------------------------------------------------------
+# Never commit these - even in demos!
+
+*.pem
+*.key
+.env
+.env.local
+secrets.json
+credentials.json
+
+
+# ==============================================================================
+# DEMO TALKING POINT:
+# 
+# ".gitignore ensures only source code gets committed, not build artifacts.
+#  Without this, your repo would balloon from 5KB to 500MB every build.
+#  
+#  In enterprise scenarios, this also prevents accidentally committing:
+#  - Secrets and API keys
+#  - Customer data
+#  - Compiled binaries with vulnerabilities
+#  
+#  Devcontainers + .gitignore = Clean, secure, reproducible codebases"
+# ==============================================================================

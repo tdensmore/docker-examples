@@ -10,7 +10,7 @@ rust-demo/
 │   └── main.rs
 └── Cargo.toml
 Demo Script with Value Callouts
-<artifacts identifier="devcontainer-sales-demo" type="application/vnd.ant.code" language="markdown" title="Devcontainer Sales Demo Script">
+
 # Devcontainer Value Demo Script
 Setup (2 minutes)
 TALKING POINT #1: Zero Manual Installation
@@ -173,22 +173,7 @@ Key Takeaways for Customers
 ✅ Compliance: Centrally managed, approved images
 ✅ Cost Savings: Reduced support tickets, faster productivity
 ✅ Developer Happiness: "It just works"
-</artifacts>
-🎯 Quick Clarification Questions:
-
-Demo format - Will AEs/CSMs run this live in customer meetings, or is it more for their own learning?
-Customer profile - Are you typically demoing to:
-
-Small startups (simplicity wins)
-Mid-market (ROI focused)
-Enterprise (compliance/security focused)
 
 
-Competitive positioning - Should I add talking points about how this compares to:
-
-GitPod/Codespaces (cloud IDEs)
-Traditional VMs/vagrant
-Manual setup processes
 
 
-Integration story - Want me to tie this into other Docker products like Docker Business, Hardened Images, or Scout?
